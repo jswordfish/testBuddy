@@ -1,0 +1,56 @@
+
+<html ng-app="myApp">
+<head>
+  <title>Autocomplete Demo</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/autocomplete.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.9.0.js"></script>
+  
+  <script type="text/javascript" src="script/autocomplete.js"></script>
+    <script src="js/aC.js"></script>
+    
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/autocomplete.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700" rel="stylesheet" type="text/css">
+  
+
+</head>
+<body>
+ <div ng-controller="autoCompleteController">
+ 
+   <script type="text/ng-template" id="customTemplate.html">
+	<a>
+	<span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+	<i>({{match.model.capital}})</i>
+	</a>
+	</script>
+
+ 
+<input type="text" placeholder="Search Resource"
+ng-model="selectedResources"
+typeahead="text as keyword.text for keyword in autoCompleteKeywords"
+typeahead-min-length='1'
+typeahead-on-select='onSelectPart($item, $model, $label)'
+typeahead-template-url="customTemplate.html" style="width:350px;">
+</div>
+<br>
+
+<div ng-controller="autoCompleteController">
+    <div class="main">
+      <h2>Search for resourcess:</h2>
+      <autocomplete placeholder="type to search movies..." click-activation="true" data="autoCompleteKeywords" on-type="doSomething"></autocomplete>
+      <br>
+      <div class="description">
+        This is a simple autocomplete directive for AngularJS, packaged in a Angular module. You can check out the source code or download it here: 
+        <br><br>
+        <a href="https://github.com/JustGoscha/allmighty-autocomplete">Allmigty-Autocomplete on GitHub</a>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>

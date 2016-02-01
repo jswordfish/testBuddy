@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  ng-app="myApp" ng-controller="searchController">
+    <head>
+        <title>Employee Registration Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/default.css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		
+	<script src="js/searchBooks.js"></script>
+	
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link href="css/navbar-fixed-top.css" rel="stylesheet">
+		
+	<style>
+		 .input-xs {
+		    height: 22px;
+		    padding: 2px 5px;
+		    font-size: 12px;
+		    line-height: 1.5; //If Placeholder of the input is moved up, rem/modify this.
+		    border-radius: 3px;
+		    }
+	
+		.horRow {
+		    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+		    -moz-column-count: 3; /* Firefox */
+		    column-count: 3;
+		}
+		
+		.tbltr {
+		    border-bottom: 1px solid black;
+		    border-color:blue;
+		}?
+
+		tbltr:last-child { 
+		    border-bottom: none; 
+		}
+	
+	</style>
+    </head>
+    <body>    
+    <div class="container">
+			<div class="row">
+				<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+						
+					    <div class="collapse navbar-collapse navbar-ex1-collapse">
+							<br/>
+							<form class="form-inline" role="form" ng-submit="search()">
+							
+							    <div class="input-group">
+							    
+								
+								    
+								    <input type="text"  name="general" id="general" placeholder="{{placeholderExtra}}" ng-model="searchTextExtra" ng-disabled="{{enableStatus}}" class="input-xs"   />
+								     &nbsp;
+								    <select class="input-xs" data-live-search="true" title="Please select search criteria"  ng-model="searchOption" required="required" ng-init="searchOption ='Generic Search'" ng-options="opt as opt for opt in ['Generic Search', 'Career Stream Or Subject Or Exam Or Institute', 'Career Stream And Subject', 'Career Stream And Exam', 'Subject And Exam', 'Institute And Exam', 'Institute And Subject', 'Book Title', 'ISBN']" 
+									ng-change='changeDisplay()'  required>
+									<option></option>
+									</select>
+								    <span class="input-group-btn">
+								     &nbsp;
+								    <input type="text"  name="extra" id="extra" ng-model="searchText" placeholder="{{placeholderMain}}" class="form-control input-xs" required />
+									<button class="btn btn-xs btn-success">
+									    <i class="glyphicon glyphicon-search"></i>
+									</button>
+								    </span>
+								    
+								    
+								</div>
+								
+							
+							    
+							</form>
+						
+				        
+						
+				    </div>
+				</div>				
+			</div>
+
+			<div class="row">
+				<section>
+				    <div>
+
+					
+
+					    
+						
+						
+							<table id="table-transform" data-toolbar="#transform-buttons">
+    
+								    <tbody>
+									    <tr class="tbltr input-xs" ng-repeat="row in bookRows">
+										<td  class="col-sm-5 col-md-5 input-xs"   ng-repeat="b in row">
+										
+									
+												
+												
+												<p>
+												  {{b.tempId}}. <a href="{{b.detailPageURL}}">{{ b.bookTitle}}</a>
+												  </p>
+											
+												<p>
+												    <img src = "{{ b.mediumImageUrl}}"
+													 alt = "{{ b.bookTitle}}" />
+												  </p>
+										   
+										</td>
+										
+									    </tr>
+									    
+								    </tbody>
+							</table>
+														
+						 
+						
+					    
+					   
+				    </div>
+				</section>
+			</div> 
+		</div>
+
+
+  
+
+
+
+
+
+</body>

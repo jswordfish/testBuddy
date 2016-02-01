@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Social Sign In Testing</title>
+ <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js"></script>
+  	<script src="helloScripts/hello.all.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+  	<script src="js/bootstrap.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+  	<link href="css/bootstrap-social.css" rel="stylesheet">
+  	<link href="css/font-awesome.css" rel="stylesheet">
+  	<script>
+  	hello.init({
+	google: '669239863481-h6bkuqghtbf3m6mudga7s1ek5pc8lqcs.apps.googleusercontent.com'
+	}, {redirect_uri: 'testAuth.html'});
+  	</script>
+	<script>
+	console.log('here 1');
+	hello.on('auth.login', function(auth) {
+	
+	
+	// Call user information, for the given network
+	hello(auth.network).api('/me').then(function(r) {
+		// Inject it into the container
+		var label = document.getElementById('profile_' + auth.network);
+		console.log(label);
+		if (!label) {
+			console.log('inside label creation');
+			label = document.createElement('div');
+			label.id = 'profile_' + auth.network;
+			document.getElementById('profile').appendChild(label);
+			console.log(document.getElementById('profile'));
+			console.log('label appended');
+
+		}
+		label.innerHTML = '<img src="' + r.thumbnail + '" /> Hey ' + r.name;
+	});
+	});
+	
+	function logout(){
+		hello('google').logout().then(function() {
+			alert('Signed out');
+			var profileNode = document.getElementById("profile");
+				while (profileNode.firstChild) {
+				    profileNode.removeChild(profileNode.firstChild);
+				}
+			window.location.reload();
+
+		}, function(e) {
+			alert('Signed out error: ' + e.error.message);
+		});
+	}
+
+	function login(){
+		hello('google').login().then(function() {
+			//alert('Signed in through Google');
+
+			hello('google').api('me').then(function(json) {
+			getFriends('google', 'me/contacts');
+			}, function(e) {
+			alert('Whoops! ' + e.error.message);
+			});
+			
+		}, function(e) {
+			alert('Error Signing in: ' + e.error.message);
+		});
+	}
+
+
+	function getFriends(network, path){
+	var list = document.getElementById('list');
+	list.innerHTML = '';
+	var btn_more = document.getElementById('more');
+	btn_more.style.display = 'none';
+	// login
+	hello.login( network, {scope:'friends'}, function(auth){
+		if(!auth||auth.error){
+			console.log("Signin aborted");
+			return;
+		}
+		// Get the friends
+		// using path, me/friends or me/contacts
+		hello( network ).api( path , {limit:60}, function responseHandler(r){
+		console.log("saving in local storage");
+		//displayFriendsToSendEmail(r);
+			r = JSON.stringify(r);
+			localStorage.setItem('friends', r);
+			console.log("saved in local storage");
+			document.getElementById("friends").innerHTML = "";
+			var html = "<h4> There are no contacts existing as users in the system. Click Invite button below to invite contacts</h4><br>";
+		html += "<button class='btn btn-info' data-toggle='modal' data-target='.bs-example-modal-sm' onClick='displayFriendsToSendEmail()'>Invite</button>";
+		document.getElementById("friends").innerHTML = html ;	
+		});
+	});
+	}
+
+	function displayFriendsToSendEmail(){
+		console.log("displayFriendsToSendEmail function called");
+		var r = localStorage.getItem('friends');
+		r = jQuery.parseJSON(r);
+		console.log("data from local storage "+r);
+		document.getElementById("friends").innerHTML = "";
+
+		var newTable = "<table border='1' width='60%'>";
+		newTable += "<th align='center' width='4%'> Number</th>";
+		newTable += "<th align='center' width='24%'> Name</th>";
+		newTable += "<th align='center' width='24%'> Email</th>";
+		newTable += "<th align='center' width='24%'> Image</th>";
+		newTable += "<th align='center' width='24%'> Add Friend</th>";
+		console.log("creating table");
+		var count = 1;
+		for(j = 0; j < r.data.length; j++) { //opening braces should always be on the same line in JS
+			console.log("row "+j);
+			
+			var o = r.data[j];
+			console.log("0000");
+			if(o.email == '' || o.email == null || o.email == 'undefined'){
+				
+				break;
+			}
+			
+			newTable += "<tr>";
+			newTable += "<td align='center' width='4%'>" + count  + "</td>";
+			count ++;
+    			newTable += "<td align='center' width='24%'>" + o.name + "</td>";
+			newTable += "<td align='center' width='24%'>" + o.email + "</td>";
+			
+			var temp = o.thumbnail?" <img src="+o.thumbnail+" />":'';
+			console.log("1111 temp "+temp);
+			newTable += "<td align='center' width='24%'>" +temp +  " </td>";
+			newTable += "<td align='center' width='24%'> <label><input type='checkbox' id='cbox2"+o.email+"' name='cbox2"+o.email+"' 
+
+value='second_checkbox' checked> Invite</label></td>";
+			
+			console.log("2222");	
+			newTable += "</tr>";
+		}
+		newTable += "</table><br>";
+newTable += "<button class='btn btn-info' data-toggle='modal' data-target='.bs-example-modal-sm' onClick='popup()' >Send Email</button><br>";
+		
+		document.getElementById("friends").innerHTML = newTable ;
+
+	}
+
+	function popup(){
+		alert("Not now! Later");
+	}
+	</script>
+  </head>
+</head>
+<body>
+
+<div class="omb_login">
+    	
+		<div class="row text-center">
+        <div class="col-md-4 col-sm-12">
+            <button type="button" class="btn btn-primary btn-block">Facebook</button>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <button type="button" class="btn btn-info btn-block">Twitter</button>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <button type="button" class="btn btn-danger btn-block" onclick="login()">Google</button>
+        </div>
+    </div>
+		
+</div>
+
+
+
+<div id="profile" name="profile">
+
+</div>
+
+	<div id="friends">
+	<ul id="list"></ul>
+	
+	<button id="more" style="display:none;"></button>
+	</div>
+<!-- Small modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" onClick="logout()">Logout</button>
+
+
+</body>
+</html>
