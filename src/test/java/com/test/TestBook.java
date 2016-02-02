@@ -102,7 +102,7 @@ static WebClient webClient = null;
 	@Test
 	public void testGenericCriteria(){
 		String value = "(?i).*lal.*";
-		Set<Book> books = bookRepository.searchBooksByCriteria("authors", value);
+		Set<Book> books = bookRepository.searchBooksByGenericKeyword("authors", 5);
 			for(Book book : books){
 				System.out.println(book.getAuthors());
 			}

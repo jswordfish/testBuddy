@@ -41,6 +41,11 @@
  <bean id="bookWebService" class="com.v2tech.webservices.BookWebService"></bean>
  
  <bean id="amazonWebService" class="com.v2tech.webservices.AmazonWebService"></bean>
+ 
+ <bean id="utilWebService" class="com.v2tech.webservices.UtilWebService"></bean>
+ 
+ <bean id="reviewRelatedService" class="com.v2tech.webservices.ReviewRelatedWebService"></bean>
+ 
 
  <jaxrs:server id="bookSys" address="/rest/">
   
@@ -48,7 +53,8 @@
     <ref bean="resourceService" />
     <ref bean="bookWebService" />
     <ref bean="amazonWebService" />
-    
+    <ref bean="utilWebService" />
+    <ref bean="reviewRelatedService"/>
   </jaxrs:serviceBeans>
   
 	<jaxrs:providers>

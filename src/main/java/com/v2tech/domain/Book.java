@@ -125,6 +125,7 @@ public class Book {
 	@Fetch
 	@RelatedTo(type = "BELONGS_TO_SOURCE", direction = Direction.INCOMING)
 	private Set<Source> sources = new HashSet<Source>();
+	
 
 	public String getBookTitle() {
 		return bookTitle;

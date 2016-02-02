@@ -1,15 +1,24 @@
 package com.v2tech.domain;
 
+import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
+import org.springframework.data.neo4j.annotation.RelatedTo;
 
 @NodeEntity
 public class Review {
 	
 @GraphId
 private Long id;
+
+@RelatedTo(type = "REVIEW_FOR", direction = Direction.OUTGOING)
+ResourceUnderReview resourceUnderReview;
+
+String resourceLink = "";
 	
 String userName = "";
+
+String resourceName = "";
 
 String bookIsbn = "";
 
@@ -43,29 +52,29 @@ String howToBestUseBookText;
 
 String suggestionsImprovementText;
 
-Integer scopeOfCriteria;
+Integer scopeOfCriteria = -1;
 
-Integer depthOfCoverage;
+Integer depthOfCoverage = -1;
 
-Integer effectivenessAndEaseOfCommunication;
+Integer effectivenessAndEaseOfCommunication = -1;
 
-Integer learningAides;
+Integer learningAides = -1;
 
-Integer practiceProblems;
+Integer practiceProblems = -1;
 
-Integer solvedExamples;
+Integer solvedExamples = -1;
 
-Integer solutionToPracticeProblems;
+Integer solutionToPracticeProblems = -1;
 
-Integer visualTools;
+Integer visualTools = -1;
 
-Integer realWorldExamples;
+Integer realWorldExamples = -1;
 
-Integer overAll;
+Integer overAll = -1;
 
-Integer howToBestUseBook;
+Integer howToBestUseBook = -1;
 
-Integer suggestionsImprovement;
+Integer suggestionsImprovement = -1;
 /**
  * Coaching class attributes
  */
@@ -113,49 +122,49 @@ String howToBestUseCoachingClassText;
 
 String coachingClassSuggestionForImprovementText;
 
-Integer instructionQuality;
+Integer instructionQuality = -1;
 
-Integer maths;
+Integer maths = -1;
 
-Integer physics;
+Integer physics = -1;
 
-Integer chemistry;
+Integer chemistry = -1;
 
-Integer instructors;
+Integer instructors = -1;
 
-Integer comfortInApproachingInstructors;
+Integer comfortInApproachingInstructors = -1;
 
-Integer instructorsAbleToUnderstandAndAddressDoubts;
+Integer instructorsAbleToUnderstandAndAddressDoubts = -1;
 
-Integer instructorsKeepingStudentsEngaged;
+Integer instructorsKeepingStudentsEngaged = -1;
 
-Integer studyMaterials;
+Integer studyMaterials = -1;
 
-Integer chapterNotes;
+Integer chapterNotes = -1;
 
-Integer instructorPracticeProblems;
+Integer instructorPracticeProblems = -1;
 
-Integer cheatSheet;
+Integer cheatSheet = -1;
 
-Integer personalization;
+Integer personalization = -1;
 
-Integer provideIndividualFeedback;
+Integer provideIndividualFeedback = -1;
 
-Integer organizeDoubtSolvingSession;
+Integer organizeDoubtSolvingSession = -1;
 
-Integer recognizeStrongAndWeakAreasStudent;
+Integer recognizeStrongAndWeakAreasStudent = -1;
 
-Integer infrastructure;
+Integer infrastructure = -1;
 
-Integer happyWithClassRoomInfrastructure;
+Integer happyWithClassRoomInfrastructure = -1;
 
-Integer happyWithInfrastructureOusideClassRoom;
+Integer happyWithInfrastructureOusideClassRoom = -1;
 
-Integer coachingClassOverAll;
+Integer coachingClassOverAll = -1;
 
-Integer howToBestUseCoachingClass;
+Integer howToBestUseCoachingClass = -1;
 
-Integer coachingClassSuggestionForImprovement;
+Integer coachingClassSuggestionForImprovement = -1;
 
 /**
  * Digital Tools attributes
@@ -190,33 +199,33 @@ String digitalToolHowToBestUseText;
 
 String digitalToolSuggestionsForImprovementText;
 
-Integer digitalToolStudyMaterials;
+Integer digitalToolStudyMaterials = -1;
 
-Integer digitalToolChapterNotes;
+Integer digitalToolChapterNotes = -1;
 
-Integer digitalToolpracticeProblems;
+Integer digitalToolpracticeProblems = -1;
 
-Integer digitalToolCheatSheets;
+Integer digitalToolCheatSheets = -1;
 
-Integer digitalToolPersonalization;
+Integer digitalToolPersonalization = -1;
 
-Integer digitalToolFeedbackAnalysis;
+Integer digitalToolFeedbackAnalysis = -1;
 
-Integer digitalToolTimeSavingStrategy;
+Integer digitalToolTimeSavingStrategy = -1;
 
-Integer digitalToolAccessToExperts;
+Integer digitalToolAccessToExperts = -1;
 
-Integer digitalToolEaseOfUse;
+Integer digitalToolEaseOfUse = -1;
 
-Integer digitalToolReceiveTimelyHelp;
+Integer digitalToolReceiveTimelyHelp = -1;
 
-Integer digitalToolReliableInternetConnection;
+Integer digitalToolReliableInternetConnection = -1;
 
-Integer digitalToolOverAll;
+Integer digitalToolOverAll = -1;
 
-Integer digitalToolHowToBestUse;
+Integer digitalToolHowToBestUse = -1;
 
-Integer digitalToolSuggestionsForImprovement;
+Integer digitalToolSuggestionsForImprovement = -1;
 
 public String getUserName() {
 	return userName;
@@ -1051,9 +1060,47 @@ public void setDigitalToolSuggestionsForImprovement(
 	this.digitalToolSuggestionsForImprovement = digitalToolSuggestionsForImprovement;
 }
 
-/**
- * Cooaching class attrs get/set methods
- */
+public ResourceUnderReview getResourceUnderReview() {
+	return resourceUnderReview;
+}
+
+public void setResourceUnderReview(ResourceUnderReview resourceUnderReview) {
+	this.resourceUnderReview = resourceUnderReview;
+}
+
+public String getCoachingClassName() {
+	return coachingClassName;
+}
+
+public void setCoachingClassName(String coachingClassName) {
+	this.coachingClassName = coachingClassName;
+}
+
+public String getCoachingClassLocation() {
+	return coachingClassLocation;
+}
+
+public void setCoachingClassLocation(String coachingClassLocation) {
+	this.coachingClassLocation = coachingClassLocation;
+}
+
+public String getResourceName() {
+	return resourceName;
+}
+
+public void setResourceName(String resourceName) {
+	this.resourceName = resourceName;
+}
+
+public String getResourceLink() {
+	return resourceLink;
+}
+
+public void setResourceLink(String resourceLink) {
+	this.resourceLink = resourceLink;
+}
+
+
 
 
 }
