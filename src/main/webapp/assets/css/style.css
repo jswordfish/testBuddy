@@ -1,0 +1,485 @@
+
+body {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+	font-style: normal;
+	font-variant: normal;
+}
+
+/*---menu bar---*/
+#logo {
+  color:white;
+  font-size:36px;
+}
+#logo span {
+  color:white;
+  font-size:12px;
+}
+#active {
+  color:white;
+}
+
+nav.navbar {
+  background-color:#00cccc;
+  border-radius:0px;
+  border-style:none;
+  height: 100px;
+  
+}
+ul.navbar-nav {
+  margin-top:50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (min-width:1200px) {
+  ul.navbar-nav {
+    margin-right:-150px;
+  }
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover, .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background-color: transparent;
+}
+header .dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 414px;
+    z-index: 9;
+}
+header .dropdown ul.dropdown-menu {
+  width: 650px;
+  height: 350px;
+  margin-right:-400px;
+}
+header .dropdown ul.dropdown-menu ul.menu-sec1{
+  background-color:darkorange;
+  padding:10px 20px 10px 20px;
+}
+
+
+header .dropdown ul.dropdown-menu ul.menu-sec2 ul li {
+  display: inline-block;
+}
+
+
+header .dropdown ul.dropdown-menu ul.menu-sec2 li ul li a{
+  color: black;
+  padding:10px;
+  background-color:#c0c0c0;
+  margin-right:-5px;
+}
+
+header .dropdown ul.dropdown-menu ul.menu-sec2 li ul li {
+  display: inline-block; 
+}
+
+header .dropdown ul.dropdown-menu ul.menu-sec1 li{
+  color:white;
+  font-size:14pt;
+}
+
+header .dropdown ul.dropdown-menu ul.menu-sec1 li a{
+  color:black;
+}
+header .dropdown ul.dropdown-menu li {
+  display: inline-block;
+}
+
+header .dropdown ul.dropdown-menu li ul li {
+  display: block;
+}
+
+
+.featured .col-md-4 {
+  text-align:center;
+  padding: 20px;
+  font-size:18pt;
+  background-color: #d2d2d2;
+  border:1px solid #00cccc;
+  height: 250px;
+}
+
+.featured .col-md-3 {
+  text-align:center;
+  padding: 20px;
+  border-bottom:1px solid #00cccc;
+  border-top:1px solid #00cccc;
+  font-size:18pt;
+  background-color: #d2d2d2;
+  height: 250px;
+}
+.featured .col-md-1 {
+  background-color:green;
+  padding: 20px;
+  text-align: center;
+  font-size: 24pt;
+  font-size: bold;
+}
+@media (min-width:1200px) {
+.featured .vertical-text {
+  font-size: 24pt;
+  font-size: bold;
+  padding-bottom: 35px;	
+  margin-left: 40px;
+  margin-top: 130px;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+}
+}
+.feedback-text {
+  font-size: 24pt;
+  font-size: bold;
+  position: fixed;
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+}
+
+.login-sec ul li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+  color: white;
+}
+.login-sec ul li a {
+  color:white;
+}
+nav.navbar div.navbar-collapse ul li a {
+  color:white;
+}
+
+
+.country-icons {
+  padding: 10px;
+  background-color: #e5e5e5;
+  width: 300px;
+}
+
+.country-icons  ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.search-filter {
+  height: 500px;
+  background-color: #727272;
+  margin-top: -30px;
+}
+
+@media (min-width:1000px) {
+.filter {
+  margin:0px auto 0px;
+  margin-left:35%;
+  margin-top: 200px;
+}
+}
+
+.filter .form-control {
+  height:60px;
+  width:100px;
+   border-style:none;
+   border-radius:0px;
+}
+.filter .btn-search {
+   height:60px;
+  width:60px;
+  font-size: 24pt;
+  background-color:orange;
+  border-style:none;
+  border-radius:0px;
+}
+
+.filter .btn-Ask {
+   height:60px;
+  width:100px;
+  font-size: 24pt;
+  color:white;
+  background-color:#6600cc;
+  border-style:none;
+  border-radius:0px;
+}
+
+.filter .btn-buy {
+   height:60px;
+  width:100px;
+  font-size: 24pt;
+  color:white;
+  background-color:green;
+  border-style:none;
+  border-radius:0px;
+}
+
+.icon-sec {
+  padding:20px;
+  padding-bottom: 50px;
+  background-color:#003366;
+  color:white;
+}
+
+.icon-sec p {
+  font-size: 14pt;
+}
+@media (min-width:1000px) {
+.icon-sec ul {
+ margin-top:60px;
+}
+.icon-sec ul li {
+  display: inline-block;
+  margin-right: 100px;
+  text-align:center;
+  font-weight:bold;
+}
+}
+
+@media (max-width:1000px) {
+.icon-sec ul {
+ margin-top:60px;
+}
+.icon-sec ul li {
+  display: block;
+  margin-top: 150px;
+  margin-left:-20px;
+  text-align:center;
+  font-weight:bold;
+}
+}
+
+.icon-sec .info {
+  content: url('http://localhost/client/Jatin/education/assets/images/icons/info.png');
+}
+
+.icon-sec ul li a.getInfo {
+  color: white;
+  border-radius: 100%;
+  padding: 50px 30px 50px 30px;
+  background-color: green;
+  font-size: 14pt;
+}
+
+.icon-sec ul li a.discover {
+  color: white;
+  border-radius: 100%;
+  padding: 50px 30px 50px 30px;
+  background-color: #3399ff;
+  font-size: 14pt;
+}
+
+.icon-sec ul li a.prep {
+  color: white;
+  border-radius: 100%;
+  padding: 50px 45px 50px 45px;
+  background-color: yellow;
+  font-size: 14pt;
+}
+
+.icon-sec ul li a.tools {
+  color: white;
+  border-radius: 100%;
+  padding: 50px 45px 50px 45px;
+  background-color: orange;
+  font-size: 14pt;
+}
+
+.icon-sec ul li a.careerGuid {
+  color: white;
+  border-radius: 100%;
+  padding: 50px 10px 50px 10px;
+  background-color: #0066cc;
+  font-size: 14pt;
+}
+.icon-sec ul li a:hover {
+  text-decoration: none;
+}
+
+.student-sec {
+  padding: 20px;
+}
+
+.personal-coach {
+  border: 1px solid #00cccc;
+  padding:20px;
+}
+
+.personal-coach ul li {
+  display: inline-block;
+}
+@media (min-width:1200px) {
+.personal-coach input {
+  height: 50px;
+  width: 240px;
+}
+
+.btn-submit {
+  background-color: orange;
+  color: white;
+  border-style: none;
+  height: 50px;
+  width: 350px;
+  font-size: 18pt;
+}
+}
+
+@media (max-width:1200px) {
+.personal-coach input {
+  height: 50px;
+}
+
+.btn-submit {
+  background-color: orange;
+  color: white;
+  border-style: none;
+  height: 50px;
+  width: 200px;
+  font-size: 18pt;
+}
+}
+
+
+footer {
+  background-color: black;
+  padding: 20px;
+  color: white;
+}
+
+footer ul li {
+  display: block;
+}
+
+footer ul li a{
+  font-size: 14pt;
+  color: white;
+}
+
+footer ul li a:hover{
+  font-size: 14pt;
+  color: white;
+}
+
+footer ul.foot-icon {
+  padding: 10px;
+  background-color:white;
+  color: black;
+  font-weight:bold;
+}
+@media (min-width: 800px) {
+  footer ul.foot-icon {
+   height: 100px;
+   margin-top: 40px;
+ }
+  footer ul.foot-icon li.social-icon {
+  margin-left: 180px;
+  margin-top: -70px;
+  }
+}
+
+footer ul.foot-icon li{
+  display: inline-block;
+  margin-right: 50px;
+}
+
+footer ul.foot-icon li ul li{
+  display: inline-block;
+  color: black;
+}
+
+footer ul.foot-icon li a.icon-facebook{
+    text-align:center;
+	font-size: 1em;
+	text-decoration: none;
+	font-family: FontAwesome;
+	height:30px;
+	width:40px;
+	padding-top:6px;
+	text-align:center;
+	background-color:#0066cc;
+	font-weight: normal;
+	font-style: normal;
+	margin-right:-5px;
+	color:white;
+	display:inline-block;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga" 1, "dlig" 1;
+	-o-font-feature-settings: "liga" 1, "dlig" 1;
+	font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+footer ul.foot-icon li a.icon-twitter{
+    text-align:center;
+	font-size: 1em;
+	text-decoration: none;
+	font-family: FontAwesome;
+	height:30px;
+	width:40px;
+	padding-top:6px;
+	text-align:center;
+	background-color:#ccffff;
+	font-weight: normal;
+	font-style: normal;
+	margin-right:-5px;
+	color:white;
+	display:inline-block;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga" 1, "dlig" 1;
+	-o-font-feature-settings: "liga" 1, "dlig" 1;
+	font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+footer ul.foot-icon li a.fa-google-plus{
+    text-align:center;
+	font-size: 1em;
+	text-decoration: none;
+	font-family: FontAwesome;
+	height:30px;
+	width:40px;
+	padding-top:6px;
+	text-align:center;
+	background-color:#cc0000;
+	font-weight: normal;
+	font-style: normal;
+	margin-right:-5px;
+	color:white;
+	display:inline-block;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga" 1, "dlig" 1;
+	-o-font-feature-settings: "liga" 1, "dlig" 1;
+	font-feature-settings: "liga" 1, "dlig" 1;
+}

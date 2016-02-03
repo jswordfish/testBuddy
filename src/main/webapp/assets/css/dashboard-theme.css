@@ -1,0 +1,213 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+}
+
+/*---menu bar---*/
+#logo {
+  color:white;
+  font-size:20px;
+}
+#active {
+  color:white;
+}
+
+nav.navbar {
+  background-color:black;
+  opacity:0.9;
+  border-radius:0px;
+}
+
+.navbar-inverse .navbar-header .navbar-brand:hover,
+.navbar-inverse .navbar-header .navbar-brand:focus {
+   color: #ffffff;
+}
+
+.navbar-inverse .nav > li>a,
+.navbar-inverse .nav>li>a:focus {
+   font-size: 13px;
+   font-weight: 700; 
+}
+
+.navbar-inverse .nav > li>a:hover,
+.navbar-inverse .nav>li>a:focus:hover {
+   
+}
+.navbar-inverse .nav > li.active>a,
+.navbar-inverse .nav>li.active>a:focus {
+   color: #ffffff!important;
+   background-color: transparent;
+}
+
+.navbar-inverse .nav > li.active>a:hover,
+.navbar-inverse .nav>li.active>a:focus:hover {
+   background-color: transparent;
+}
+.serach-btn {
+  height:20px;
+}
+
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,.7);
+}
+
+header .nav {
+    position:absolute;
+}
+header .nav img {
+    width:10%;
+	height:10%;
+}
+header .nav>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background:#fff;
+}
+header .dropdown {
+    background:#fff;
+    width:200px;  
+	height:50px;
+}
+header .dropdown-menu>li>a {
+    color:#428bca;
+}
+header .dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:20px;
+    width:250px;
+	padding:20px;
+}
+header .caret {
+  margin-top:10px;
+}
+header .dropdown ul.dropdown-menu li div{
+   text-indent:10px;
+}
+
+header .dropdown ul.dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+}
+header .dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 14px;
+    z-index: 9;
+}
+.progress {
+  height:10px;
+}
+@media(max-width:480px) {
+   header .nav {
+	margin-left:10%;
+   }
+}
+@media(min-width:768px) {
+    header {
+        min-height: 17%;
+    }
+	header .nav {
+	margin-left:70%;
+   }
+
+    header .header-content {
+        position: absolute;
+        top: 47%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 18px;
+    }
+}
+
+
+#explore {
+  width: 100%;
+  min-height: 100%;
+  background-color:#ebebeb;
+}
+
+#participate {
+  width: 100%;
+  min-height: 100%;
+}
+
+#tBreak {
+  width: 100%;
+  min-height: 100%;
+  background-color:#ebebeb;
+}
+
+
+.nav-tabs { border-bottom: 2px solid #DDD; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; text-align: justify;}
+.tab-content{padding:20px}
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; margin-top: 100px;}
+
+
+footer {
+   padding-top: 20Px;
+   padding-bottom: 10Px;
+}
+.foot-link li {
+  display: inline-block;
+}

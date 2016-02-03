@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> Home </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/socialicious.css"> 
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ </head>
+
+ <body>
+ <header>
+	<!----menu bar start---->
+	<nav class="navbar navbar-inverse" role="navigation">
+	  <div class="login-sec pull-right">
+			<ul>
+			  <li></li><span class="fa fa-bars" style='color:orange;font-size:20px;margin-right:10px;'></span><li><a href="">Login</a></li><li>/</li><li><a href="">Registration</a></li>
+			</ul>
+		</div>
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#" id='logo'>Logo<br/><span>We simplify<br/>education</span></a>
+	  </div>
+	  <!-- Collect the nav links, forms, and other content for toggling -->
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		
+		<ul class="nav navbar-nav navbar-right">
+		  <li class="dropdown">
+		   <a href="#" class="dropdown-toggle" data-toggle="dropdown" id='active'>Courses</a>
+		    <ul class="dropdown-menu">
+				<li>
+				  <ul class='menu-sec1'>
+				    <li>MANAGEMENT</li>
+					<li><a href="#">MEDICAL</a></li>
+					<li><a href="#">LAW</a></li>
+					<li><a href="#">ARCHITECTURE</a></li>
+					<li><a href="#">ENGINEERING</a></li>
+					<li><a href="#">ARTS</a></li>
+					<li><a href="#">SCIENCE </a></li>
+					<li><a href="#">COMMERCE</a></li>
+					<li><a href="#">ENGINEERING</a></li>
+					<li><a href="#">ARTS</a></li>
+					<li><a href="#">SCIENCE </a></li>
+					<li><a href="#">COMMERCE</a></li>
+				  </ul>
+				</li>
+				
+				<li>
+				  <ul class='menu-sec2'>
+				    <li>
+					  <ul>
+					    <li>
+					     <ul style="margin-top:-340px;margin-left:40px;font-size:12pt;">
+						  <li><a href="#">MBA/PGDM</a></li>
+						   <li><a href="#">Executive MBA</a></li>
+						   <li><a href="#">MHA</a></li>
+						   <li><a href="#">M.phil</a></li>
+						   <li><a href="#">PHD</a></li>
+						   <li><a href="#">BBM/BMS</a></li>
+						  </ul>
+						 </li>
+						  
+						 <li>
+						  <ul style="margin-top:-340px;margin-left:40px;font-size:12pt;">
+						   <li><a href="#">MBA/PGDM</a></li>
+						   <li><a href="#">Executive MBA</a></li>
+						   <li><a href="#">MHA</a></li>
+						   <li><a href="#">M.phil</a></li>
+						   <li><a href="#">PHD</a></li>
+						   <li><a href="#">BBM/BMS</a></li>
+						  </ul>
+						 </li>
+					  </ul>
+					</li>
+				  </ul>
+				</li>
+			</ul>
+		  </li>
+		  <li><a href="#">Exam & Prep</a></li>
+		  <li><a href="#">Participate</a></li>
+		  <li><a href="#">Councelling</a></li>
+		  <li><a href="#">Write a review</a></li>
+		</ul>
+	  </div><!-- /.navbar-collapse -->
+	</nav>
+	<!----menu bar End---->
+</header>
+
+<!------Search Section---------->
+<section class="search-filter">
+ <div class="container-fluid">
+    <div class='filter'>
+	   <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default btn-search" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+			<div class="input-group-btn">
+                <button class="btn btn-default btn-Ask" type="button">ASK</button>
+            </div>
+			<div class="input-group-btn">
+                <button class="btn btn-default btn-buy" type="button">SHOP</button>
+            </div>
+        </div>
+        </form>
+	</div>
+ </div>
+</section>
+<!------/Search Section End---------->
+
+
+<!-------Feature----------->
+<section class="featured">
+ <div class="container-fluid">
+    <div class='row'>
+	 <div class="col-md-1">
+	  <div class="vertical-text">FEATURED</div>
+	 </div>
+	   <div class='col-md-4'>TOP COLLEGES
+	   </div>
+	   <div class='col-md-4'>TOP COURCES</div>
+	   <div class='col-md-3'>ALUMNI INSIGHTS</div>
+	</div>
+ </div>
+ <div class="feedback-text">FEEDBACK</div>
+</section>
+<!-------Feature End----------->
+
+
+
+<section class="icon-sec container-fluid">
+   <p>LET US SIMPLIFY YOUR EDUCATION FOR YOU</p>
+   <ul>
+     <li><a href="" class='getInfo'>Get Info</a></li>
+	 <li><a href="" class='discover'>Discover</a></li>
+	 <li><a href="" class='prep'>Prep</a></li>
+	 <li><a href="" class='tools'>Tools</a></li>
+	 <li><a href="" class='careerGuid'>Career Guidance</a></li>
+   </ul>
+</section>
+
+<section class='student-sec'>
+  <div class="row">
+    <div class="col-md-4">
+	 <h3>STUDY IN INDIA</h3>
+	</div>
+
+	<div class="col-md-4">
+	 <h3>STUDY ABROAD</h3>
+	 <div class="country-icons">
+	   <h4>Explore Universities in popular countries</h4>
+	   <ul>
+	    <li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+		<li><a href="#"><img src="assets/images/icons/aus.png"/></a></li>
+	   </ul>
+	 </div>
+	</div>
+
+	<div class="col-md-4">
+	  <div class="personal-coach">
+	   <h3>Get your personal coach for free</h3>
+	   <ul>
+	    <li>
+		 <img src="assets/images/pic.png"/>
+		</li>
+		<li>
+		 <input type="text" />
+		</li>
+		</ul>
+		<button type="submit" class="btn-submit">SUBMIT</button>
+	  </div>
+	</div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="row">
+
+    <div class="col-md-3">
+	  <ul>
+	    <li><h3>Buddy Project</h3></li>
+		<li><a href="#">About us</a></li>
+		<li><a href="">Team</a></li>
+		<li><a href="#">Career</a></li>
+		<li><a href="">Blog</a></li>
+		<li></li>
+	  </ul>
+	</div>
+
+	<div class="col-md-3">
+	  <ul>
+	    <li><h3>Partners</h3></li>
+		<li><a href="#">Partner login</a></li>
+		<li><a href="">Advertise with us</a></li>
+		<li><a href="#">Add colleges</a></li>
+		<li><a href="">Contact us</a></li>
+		<li></li>
+	  </ul>
+	</div>
+
+	<div class="col-md-2">
+	  <ul>
+	    <li><h3>Others</h3></li>
+		<li><a href="#">FAQ</a></li>
+		<li><a href="">Privacy Policy</a></li>
+		<li><a href="#">Terms & Conditions</a></li>
+		<li></li>
+	  </ul>
+	</div>
+
+	<div class="col-md-4">
+	  <ul class="foot-icon">
+	   <li>For Mobile <span style="color:#990099;">Experience</span><br/><img src="assets/images/icons/google-play-icon.png" width="150" height="50" /></li>
+	   <li class="social-icon">Follow <span style="color:#990099;">us on</span><br/>
+		   <a href="#" class="icon4 icon-facebook"></a>
+		   <a href="#" class="icon4 icon-twitter"></a>
+		   <a href="#" class="fa-google-plus"></a>
+		 </ul>
+	   </li>
+	  </ul>
+	</div>
+
+  </div>
+</footer>
+
+ </body>
+</html>
