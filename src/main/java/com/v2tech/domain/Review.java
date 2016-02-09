@@ -13,12 +13,20 @@ private Long id;
 
 @RelatedTo(type = "REVIEW_FOR", direction = Direction.OUTGOING)
 ResourceUnderReview resourceUnderReview;
+/**
+ * Typically people want top rated resources by criteria
+ */
+String criteria;
 
 String resourceLink = "";
 	
 String userName = "";
 
 String resourceName = "";
+/**
+ * Incase of books
+ */
+String resourceTitle = "";
 
 String bookIsbn = "";
 
@@ -1100,6 +1108,21 @@ public void setResourceLink(String resourceLink) {
 	this.resourceLink = resourceLink;
 }
 
+public String getCriteria() {
+	return criteria;
+}
+
+public void setCriteria(String criteria) {
+	this.criteria = criteria;
+}
+
+public String getResourceTitle() {
+	return resourceTitle;
+}
+
+public void setResourceTitle(String resourceTitle) {
+	this.resourceTitle = resourceTitle;
+}
 
 
 

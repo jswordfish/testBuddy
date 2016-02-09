@@ -118,6 +118,7 @@ public class BookService {
 						Long id = bookToBeSaved.getId();
 //						Mapper mapper = new DozerBeanMapper();
 //						mapper.map(book, bookToBeSaved);
+						bookToBeSaved.setSearchable(book.getSearchable());
 						bookToBeSaved.setAuthors(book.getAuthors());
 						bookToBeSaved.setBookImage(book.getBookImage());
 						bookToBeSaved.setBookTitle(book.getBookTitle());

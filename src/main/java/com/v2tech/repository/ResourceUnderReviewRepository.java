@@ -27,7 +27,15 @@ public interface ResourceUnderReviewRepository extends GraphRepository<ResourceU
 	public Set<ResourceUnderReview> getTopDigitalResourcesByRating();
 	
 		
-	@Query("MATCH (rr:ResourceUnderReview) WHERE rr.resourceType = 'COLLEGE' RETURN rr ORDER BY rr.averageRatingForResource DESC LIMIT 12")
-	public Set<ResourceUnderReview> getTopCollegesByRating();
+	@Query("MATCH (rr:ResourceUnderReview) WHERE rr.resourceType = 'COLLEGE' RETURN rr ORDER BY rr.averageRatingForResource DESC LIMIT {0}")
+	public Set<ResourceUnderReview> getTopCollegesByRating(Integer limit);
+	
+	@Query("MATCH (rr:ResourceUnderReview) WHERE rr.resourceType = 'COLLEGE' AND rr.criteria =~ {0} RETURN rr ORDER BY rr.averageRatingForResource DESC LIMIT {1}")
+	public Set<ResourceUnderReview> getTopCollegesByCriteriaAndRating(String criteria, Integer limit);
+	
+	@Query("MATCH (rr:ResourceUnderReview) WHERE rr.resourceType = 'BOOK' AND rr.criteria =~ {0} RETURN rr ORDER BY rr.averageRatingForResource DESC LIMIT {1}")
+	public Set<ResourceUnderReview> getTopBooksByCriteriaAndRating(String criteria, Integer limit);
+	
+	
 
 }

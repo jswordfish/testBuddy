@@ -32,6 +32,7 @@ import com.v2tech.domain.Exam;
 import com.v2tech.domain.SearchResponse;
 import com.v2tech.domain.Source;
 import com.v2tech.domain.Subject;
+import com.v2tech.repository.BookRepository;
 import com.v2tech.services.BookService;
 @Path("/bookService")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +41,9 @@ import com.v2tech.services.BookService;
 public class BookWebService {
 	@Autowired
 	BookService bookService;
+	
+	@Autowired
+	BookRepository bookRepository;
 	
 	private List<Book> convertToBooks(Iterable<Book> books){
 		List<Book> booksToBeReturned = new ArrayList<Book>();
@@ -79,6 +83,20 @@ public class BookWebService {
 			booksToBeReturned.add(bk);
 		}
 		return booksToBeReturned;
+	}
+	
+	
+	
+	@GET
+	@Path("/searchBook/title/{title}/token/{token}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Transactional
+	public SearchResponse searchAllBooksWithTitle(@PathParam("title") String title,  @PathParam("token") String token) {
+		Set<Book> books = bookRepository.searchAllBooksByTitle(title);
+		List<Book> ret = new ArrayList<>(books);
+		SearchResponse searchResponse = new SearchResponse();
+		searchResponse.setBooks(ret);
+		return searchResponse;
 	}
 	
 
@@ -583,6 +601,13 @@ public class BookWebService {
 			e.printStackTrace();
 			throw new V2GenericException("Code-ExcelParseProblem,Msg-Can not convert excel into beans");
 		}
+	}
+	
+	@POST
+    @Path("/saveOrUpdate/book/token/{token}")
+    @Consumes("application/json")
+	public void saveOrUpdateBook(Book book, @PathParam("token") String token){
+		bookService.saveOrUpdate(book);
 	}
 
 }

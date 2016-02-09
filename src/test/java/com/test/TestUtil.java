@@ -68,16 +68,34 @@ public class TestUtil {
 	}
 	
 	@Test
-	public void testCreateOrUpdateReview(){
+	public void testCreateOrUpdateReviewForBook(){
 		Review review = new Review();
 		review.setUserName("sagar@yahoo.com");
-		review.setResourceName("Chate Classes");
-		review.setResourceLink("http://ecx.images-amazon.com/images/I/31tYOWuZ6XL._SL160_.jpg");
-		review.setResourceType(RESOURCE_TYPE.COACHING_CLASS.getType());
+		review.setResourceName("ISBN-0768904099");
+		review.setResourceTitle("Gmat Cat Success: 2001 (Peterson's Gmat Cat Success (Book and CD Rom), 2001)");
+		review.setResourceLink("http://ecx.images-amazon.com/images/I/514YPKVZXFL._SL160_.jpg");
+		review.setCriteria("MBA CAT");
+		review.setResourceType(RESOURCE_TYPE.BOOK.getType());
 		review.setChapterNotes(3);
-		review.setCheatSheet(4);
-		review.setChemistry(5);
-		review.setEffectivenessAndEaseOfCommunication(5);
+		review.setCheatSheet(2);
+		//review.setChemistry(5);
+		review.setEffectivenessAndEaseOfCommunication(3);
+		reviewRelatedWebService.addOrUpdateReviewRating(review, "");
+		//reviewService.saveOrUpdate(review);
+	}
+	
+	@Test
+	public void testCreateOrUpdateReviewForCollege(){
+		Review review = new Review();
+		review.setUserName("sagar@yahoo.com");
+		review.setResourceName("Sydenham Institute of Management Studies, Research and Entrepreneurship Education SIMSREE");
+		review.setResourceLink("http://www.shiksha.com/getListingDetail/26930/institute/college-Thadomal-Shahani-Centre-For-Management-Tscfm-Mumbai-India");
+		review.setCriteria("Marketing");
+		review.setResourceType(RESOURCE_TYPE.COLLEGE.getType());
+		review.setChapterNotes(3);
+		review.setCheatSheet(2);
+		//review.setChemistry(5);
+		review.setEffectivenessAndEaseOfCommunication(4);
 		reviewRelatedWebService.addOrUpdateReviewRating(review, "");
 		//reviewService.saveOrUpdate(review);
 	}
@@ -103,6 +121,22 @@ public class TestUtil {
 		Set<ResourceUnderReview> resources = reviewRelatedWebService.getTopRatedCoachingClasses("");
 		for(ResourceUnderReview resource : resources){
 			System.out.println("Resource is "+resource.getResourceName()+" rating avg "+resource.getAverageRatingForResource());
+		}
+	}
+	
+	@Test
+	public void testGetTopCollegesByCriteria(){
+		Set<ResourceUnderReview> resources = reviewRelatedWebService.getTopRatedCollegesByCriteria("Marketing", "4", "");
+		for(ResourceUnderReview resource : resources){
+			System.out.println("Resource is "+resource.getResourceName()+" rating avg "+resource.getAverageRatingForResource());
+		}
+	}
+	
+	@Test
+	public void testGetTopBooksByCriteria(){
+		Set<ResourceUnderReview> resources = reviewRelatedWebService.getTopRatedBooksByCriteria("MBA CAT", "4", "");
+		for(ResourceUnderReview resource : resources){
+			System.out.println("Resource is "+resource.getResourceTitle()+" rating avg "+resource.getResourceName());
 		}
 	}
 }

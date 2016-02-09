@@ -16,6 +16,11 @@ public class ResourceUnderReview {
 	 */
 	String resourceName;
 	
+	/**
+	 * Incase of books
+	 */
+	String resourceTitle = "";
+	
 	String linkURLToResource = "";
 	
 	Float averageRatingForResource = 0f;
@@ -25,6 +30,8 @@ public class ResourceUnderReview {
 	Integer numberOfTimesFavourited = 0;
 
 	Integer numberOfTimesDiscussed = 0;
+	
+	String criteria="";
 
 	public Long getId() {
 		return id;
@@ -96,5 +103,23 @@ public class ResourceUnderReview {
 	public int hashCode(){
 		return averageRatingForResource.hashCode();
 	}
+
+	public String getCriteria() {
+		return criteria;
+	}
+
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
+	}
+
+	public String getResourceTitle() {
+		return resourceTitle;
+	}
+
+	public void setResourceTitle(String resourceTitle) {
+		this.resourceTitle = resourceTitle;
+	}
+	
+	
 	
 }

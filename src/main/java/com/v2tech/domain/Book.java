@@ -80,6 +80,8 @@ public class Book {
 	
 	private Integer numberOfPages ;
 	
+	private String searchable = "yes";
+	
 	/**
 	 * Comma sep values
 	 */
@@ -373,6 +375,14 @@ public class Book {
 
 	public void setInstitute(String institute) {
 		this.institute = institute;
+	}
+
+	public String getSearchable() {
+		return searchable;
+	}
+
+	public void setSearchable(String searchable) {
+		this.searchable = searchable;
 	}
 
 //	public Set<Rating> getRatings() {

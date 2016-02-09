@@ -49,7 +49,8 @@ ResourceUnderReviewService resourceUnderReviewService;
 		if(review2 == null){
 			//create
 			//step 1 Fetch ResourceUnderReview
-			
+			resource.setCriteria(review.getCriteria());
+			resource.setResourceTitle(review.getResourceTitle());
 			resource.setResourceName(review.getResourceName());
 			resource.setResourceType(review.getResourceType());
 			resource.setLinkURLToResource(review.getResourceLink());
@@ -59,6 +60,8 @@ ResourceUnderReviewService resourceUnderReviewService;
 		}
 		else{
 			//update
+			resource.setCriteria(review.getCriteria());
+			resource.setResourceTitle(review.getResourceTitle());
 			Mapper mapper = new DozerBeanMapper();
 			review.setId(review2.getId());
 			resource = resourceUnderReviewService.saveOrUpdate(resource);

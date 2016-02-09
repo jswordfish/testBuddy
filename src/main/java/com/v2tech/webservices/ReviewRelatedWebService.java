@@ -57,6 +57,7 @@ public class ReviewRelatedWebService {
 		return resources;
 	}
 	
+	
 	@GET
 	@Path("/topRatedCoachingClasses/token/{token}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -75,10 +76,32 @@ public class ReviewRelatedWebService {
 	
 	
 	@GET
-	@Path("/topRatedColleges/token/{token}")
+	@Path("/topRatedColleges/criteria/{criteria}/limit/{limit}/token/{token}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Set<ResourceUnderReview> getTopRatedColleges(@PathParam("token") String token){
-		Set<ResourceUnderReview> resources = resourceUnderReviewRepository.getTopCollegesByRating();
+	public Set<ResourceUnderReview> getTopRatedCollegesByCriteria(@PathParam("criteria") String criteria, @PathParam("limit") String limit, @PathParam("token") String token){
+		Integer lim = 4;
+		try{
+			lim = Integer.parseInt(limit);
+		}
+		catch(Exception e){
+			
+		}
+		Set<ResourceUnderReview> resources = resourceUnderReviewRepository.getTopCollegesByCriteriaAndRating(criteria, lim);
+		return resources;
+	}
+	
+	@GET
+	@Path("/topRatedBooks/criteria/{criteria}/limit/{limit}/token/{token}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Set<ResourceUnderReview> getTopRatedBooksByCriteria(@PathParam("criteria") String criteria, @PathParam("limit") String limit, @PathParam("token") String token){
+		Integer lim = 4;
+		try{
+			lim = Integer.parseInt(limit);
+		}
+		catch(Exception e){
+			
+		}
+		Set<ResourceUnderReview> resources = resourceUnderReviewRepository.getTopBooksByCriteriaAndRating(criteria, lim);
 		return resources;
 	}
 

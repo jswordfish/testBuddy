@@ -24,6 +24,8 @@ public class ResourceUnderReviewService {
 			return resourceUnderReviewRepository.save(resource);
 		}
 		else{
+			resourceUnderReview.setCriteria(resource.getCriteria());
+			resourceUnderReview.setResourceTitle(resource.getResourceTitle());
 			resourceUnderReview.setAverageRatingForResource(resource.getAverageRatingForResource());
 			resourceUnderReview.setLinkURLToResource(resource.getLinkURLToResource());
 			resourceUnderReview.setNumberOfTimesDiscussed(resource.getNumberOfTimesDiscussed());
